@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>GDBacker: Mock-up Feedback</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Open+Sans" rel="stylesheet">
+
+  <style>
+    html, body{ 
+    	padding: 0; 
+    	margin: 0;
+    	position: relative;
+    	height: 100%;
+    	overflow: hidden;
+    	font-family: 'Open Sans', sans-serif;
+    }
+  	.left, .right{
+  		position: relative;
+  		float: left;
+  		top: 0; left: 0;
+  		padding: 0; margin: 0;
+  		width: 70%;
+  		min-height: 200px;
+  		height: 100%;
+  	}
+  	.right{
+  		float: right; right: 0;
+  		width: 30%;
+  	}
+  	iframe.mock, iframe.crowd{
+  		position: relative;
+  		height: 100%; width: 100%;
+  		outline: none;
+  		border: none;
+  	}
+  	article{
+  		position: fixed;
+  		width: 500px; height: 385px;
+  		top: 45%; left: 50%;
+  		margin: -250px; padding: 20px;
+  		-webkit-box-shadow: 0 0 0 1000px rgba(0,0,0,.9);
+		box-shadow: 0 0 0 1000px rgba(0,0,0,.9);
+		text-align: center;
+		background: #222222;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		z-index: 99999;
+		color: #ffffff;
+		font-size: 16px;
+  	}
+
+  	h1, h2{
+  		font-family: 'Raleway', sans-serif !important;
+  		color: #14E06E;
+  	}
+  	h1{ font-size: 26px; }
+  	h2{ font-size: 20px; }
+
+  	button{
+	    display: block;
+	    margin: 20px 5px;
+	    padding: 10px;
+	    font-size: 24px;
+	    color: #ffffff;
+	    font-weight: bold;
+	    outline: none;
+	    border: none;
+	    font-family: 'Raleway', sans-serif;
+	    text-shadow: 1px 1px 0 #000000;
+	    background: #14E06E;
+	    width: 100px;
+	    display: inline-block;
+	}
+	button:hover{ 
+		cursor: pointer; 
+		-webkit-box-shadow: 0 0 0 2px rgba(255,255,255,1);
+		box-shadow: 0 0 0 2px rgba(255,255,255,1);
+	}
+
+  </style>
+
+</head>
+
+<body>
+	<article>
+		<h1>GD Backer: Mockup Feedback</h1>
+		<p>Thanks for helping us make GD Backer easier to use for everyone! We are currently looking for feedback on platform usability or, how easy it is for users to find and use the features we are building. Your feedback is very appreciated :)</p>
+		<br><br>
+		<h2>Before we get started, have you ever been involved with a crowdfunding campaign?</h2>
+		<button id="n">No</button><button id="y">Yes</button>
+	</article>
+
+	<div class="left"><iframe class="mock" src="mockup.html"></iframe></div>
+	<div class="right">
+		<iframe class="crowd y" src="https://docs.google.com/forms/d/e/1FAIpQLSdbpDsjuPfaLjXwkdHkjrLgCLUddYBQRBN2P5mHiFxNHCJR6Q/viewform?embedded=true">Loading...</iframe>
+		<iframe class="crowd n" src="https://docs.google.com/forms/d/e/1FAIpQLSe9N0Vgm76MbzlqEFfc6SMbW1fPkXdCI4s8MQ_05mgVFKFEDg/viewform?embedded=true">Loading...</iframe>
+	</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $('iframe.crowd').hide();
+  	$('#y').on('click',function(){ $('article').hide(); $('iframe.y.crowd').show(); });
+  	$('#n').on('click',function(){ $('article').hide(); $('iframe.n.crowd').show(); });
+  </script>
+</body>
